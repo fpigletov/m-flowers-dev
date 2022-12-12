@@ -1,0 +1,290 @@
+.form {
+    min-height: 1101px;
+    background: url('../img/bg-2.png') center/cover no-repeat;
+    padding: 200px 0;
+
+    @media (max-width: $md1) {
+        min-height: 0;  
+        padding: 100px;
+    }
+
+    @media (max-width: $md2) {
+        padding: 40px 25px;
+    }
+
+    @media (max-width: $md4) {
+        padding: 20px 5px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        background: url('../img/bg-form.png') center/cover no-repeat;  
+        min-height: 701px;      
+        max-width: 1140px;
+        padding: 80px;
+        display: flex;
+        align-items: flex-start;
+
+        @media (max-width: $md1) {
+            min-height: 0;  
+            flex-direction: column;
+            background: none;
+            background-color: $white-color;
+            padding: 32px;
+        }
+
+        @media (max-width: $md4) {            
+            padding: 20px;
+        }
+    }
+
+    &__info {
+        flex: 0 1 580px;
+        margin-right: 80px;
+
+        @media (max-width: $md1) {
+            flex: 0 1 auto;
+            width: 100%;
+            margin: 0 0 58px 0;
+        }
+
+        @media (max-width: 600px) {
+            margin: 0 0 32px 0;
+        }
+    }
+
+    &__title {
+        font-family: 'Marmelad';
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 43px;
+        margin-bottom: 40px;
+
+        @media (max-width: 600px) {
+            font-size: 32px;
+            line-height: 38px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: $md4) {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+
+        @media (max-width: 600px) {
+            font-size: 16px;
+            line-height: 19px;            
+        }
+    }
+
+    &__body {
+        flex: 0 0 320px;
+
+        @media (max-width: $md1) {
+            flex: 1 1 auto;
+            width: 100%;                   
+        }
+    }
+}		
+
+.body-form {
+
+    &__block {
+
+        &:last-child {
+            display: none;
+        }
+    }
+
+    &__content {
+        @media (max-width: $md1) {
+            display: grid;
+            grid-template-columns: repeat(2, 47.5%);
+            gap: 5%;               
+        }
+        @media (max-width: $md3) {
+            display: block;
+        }
+    }
+
+    &__label {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        
+        &_checkbox {
+            cursor: pointer;
+        }
+    }
+
+    &__name {
+        display: block;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        height: 48px;
+        background-color: $light-color;
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #8E825C;
+
+        &::placeholder {
+            font-size: 14px;
+            color: #8E825C;
+        }
+        &:focus {
+            box-shadow: 0px 0px 2px 2px rgba(55,46,17,0.4) inset;
+        }  
+    }
+
+    &__btns {
+        margin: 40px 0 20px 0;
+        display: flex;
+        align-items: center;  
+
+        @media (max-width: $md1) {
+            margin: 43px 0 20px 0;
+        }  
+           
+        @media (max-width: $md4) {
+            margin: 24px 0 20px 0;
+        }      
+    }
+
+
+    &__btn {   
+        font-weight: 600;
+        font-size: 16px;   
+        height: 51px;  
+        padding: 5px 40px;
+
+        &_next {
+            margin-top: 20px;
+            width: 100%;            
+            background-color: $light-orange-color;  
+            
+            @media (max-width: $md1) {
+                margin-top: 23px;
+            }
+
+            @media (max-width: $md3) {
+                margin-top: 20px;
+            }
+        }
+
+        &_back {
+            background-color: $light-gray-color;
+            margin-right: 9px;
+
+            @media (max-width: $md2) {
+                padding: 5px 28.5px;
+            }
+        }
+
+        &_submit {
+            background-color: $light-orange-color;
+
+            @media (max-width: $md2) {
+                padding: 5px 38px;
+            }
+
+            @media (max-width: $md4) {
+                padding: 5px 31.5px;
+            }
+
+            @media (max-width: 349px) {
+                padding: 5px 27px;
+            }
+        }
+    } 
+
+    &__symbols-img {
+        width: 100%;
+        height: 94px;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked + .body-form__tag::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:checked + .body-form__tag::before {
+            background-color: #0E493F;
+        }
+            
+        &:focus-visible + .body-form__tag {
+            outline: 2px solid $dark-color;
+            outline-offset: 3px;
+        } 
+    }
+
+    &__tag {
+        display: block;
+        position: relative;
+        font-family: 'PT Sans';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;   
+        padding-left: 30px;    
+	
+        &::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #0E493F;
+            transition: background-color 0.3 ease;
+
+            @media (max-width: 600px) {
+                top: 0;
+            }
+        }
+            
+        &::after {            
+            content: url('../img/svg/mark.svg');            
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            width: 16px;
+            height: 16px;            
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3 ease, visibility 0.3s ease;
+
+            @media (max-width: 600px) {
+                top: 1px;
+            }
+        }            
+    }
+}
+
+		
